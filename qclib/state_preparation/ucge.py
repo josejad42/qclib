@@ -138,7 +138,7 @@ class UCGEInitialize(UCGInitialize):
             diagonal = np.conj(ucg._get_diagonal())[
                 ::2
             ]  # pylint: disable=protected-access
-        if ucg.dont_carry:
+        '''if ucg.dont_carry:
             ucg.controls.reverse()
             size_required = len(ucg.dont_carry) + len(ucg.controls)
             ctrl_qc = [self.num_qubits - 1 - x for x in ucg.controls]
@@ -147,7 +147,7 @@ class UCGEInitialize(UCGInitialize):
             qc.unitary(unitary_diagonal, ctrl_qc)
             matrix = Operator(qc).to_matrix()
             diagonal = np.diag(matrix)
-        children = children * diagonal
+        children = children * diagonal'''
 
         return children
 
